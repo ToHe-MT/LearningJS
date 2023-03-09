@@ -46,17 +46,13 @@ function addEventListenerDelete(parent,element,index){
 
 function toggleAndRemoveUl(element){
 	if (element.target.className==="item"){
-		console.log(element.target.className)
 		element.target.classList.toggle("done")
 	}
 	if (element.target.className==="delete"){
-		console.log(element.target)
 		element.target.parentElement.remove();
 	} 
 }
-ul.addEventListener("click",(element)=>{
-	toggleAndRemoveUl(element)
-})
+ul.addEventListener("click",toggleAndRemoveUl);
 
 button.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterKeypress);
